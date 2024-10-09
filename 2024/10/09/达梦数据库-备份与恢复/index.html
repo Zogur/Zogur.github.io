@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>达梦数据库-备份与恢复 | IcKylinのBlog</title><meta name="author" content="IcKylin"><meta name="copyright" content="IcKylin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="达梦数据库-备份与恢复">
+<meta property="og:url" content="http://example.com/2024/10/09/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/index.html">
+<meta property="og:site_name" content="IcKylinのBlog">
+<meta property="og:description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+<meta property="article:published_time" content="2024-10-09T08:47:17.000Z">
+<meta property="article:modified_time" content="2024-10-09T09:08:45.831Z">
+<meta property="article:author" content="IcKylin">
+<meta property="article:tag" content="达梦数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/10/09/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '达梦数据库-备份与恢复',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-09 17:08:45'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="wizard-scene"><div class="wizard-objects"><div class="wizard-square"></div><div class="wizard-circle"></div><div class="wizard-triangle"></div></div><div class="wizard"><div class="wizard-body"></div><div class="wizard-right-arm"><div class="wizard-right-hand"></div></div><div class="wizard-left-arm"><div class="wizard-left-hand"></div></div><div class="wizard-head"><div class="wizard-beard"></div><div class="wizard-face"><div class="wizard-adds"></div></div><div class="wizard-hat"><div class="wizard-hat-of-the-hat"></div><div class="wizard-four-point-star --first"></div><div class="wizard-four-point-star --second"></div><div class="wizard-four-point-star --third"></div></div></div></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+    var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').style.transition = 'opacity 3s ease 0s'
+    document.getElementById('loading-box').style.opacity = '0'
+    setTimeout(function(){
+      document.getElementById('loading-box').classList.add("loaded")
+    }, 3000);
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').style.transition = '';
+    document.getElementById('loading-box').style.opacity = '1'
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+
+  //- const preloader = {
+  //-   endLoading: () => {
+  //-     $body.style.overflow = ''
+  //-     $loadingBox.classList.add('loaded')
+  //-   },
+  //-   initLoading: () => {
+  //-     $body.style.overflow = 'hidden'
+  //-     $loadingBox.classList.remove('loaded')
+  //-   }
+  //- }
+
+  preloader.initLoading()
+  //- 页面完全加载完成后触发结束预加载效果
+  window.addEventListener('load',() => { preloader.endLoading() })
+  //- 页面加载完成后的5秒钟后触发结束预加载效果
+  setTimeout(function(){preloader.endLoading();}, 5000);
+  //- 点击动画就能结束
+  document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/profile.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 兴趣</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7')"><nav id="nav"><span id="blog-info"><a href="/" title="IcKylinのBlog"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 兴趣</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">达梦数据库-备份与恢复</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-09T08:47:17.000Z" title="发表于 2024-10-09 16:47:17">2024-10-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-09T09:08:45.831Z" title="更新于 2024-10-09 17:08:45">2024-10-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="达梦数据库-备份与恢复"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="96423e8da126f8ecd8e63030c5e5f5d39ab47b42eeb66db3c0a09af32ae96897">7ce9c9e32afc881ec8ace5a650f0e605a2cf7493523388a9429180cbf7b7af8ee3801f1723d9cd9fff8ba3d3ca57ca2504d0d7ab4e87b65d4a045411e7e1bdb602d9fa1335df44d6747b31ffd478caa8ffa81ef9cdf4232bdd2f0266890f31b9b405c27e28f187fd8a0a554429ec98a7b2f93abf1a1124048499fc650c63de539e8dea977938a5f664aa43b3d0520513ef8d607b24ca60ae56c98232414764a459042af5dc99b8c1fcdb2cad340e0a6d50045a312c06a2416490c69da26b4949ae90b71e61a3b822d40decc4942ef754d8a8471e21d2856ce305cb234c0719923f226f419d3a5e52e9515341a9da6fb8513c35e608765e0695d13c982bd4dc1731eeee82f80346923e0397e73c3de78ec3da06ee2e4bf42af0f88becb4cf6cc428c281fc0208e808701ea0b8bf692356dac770243778bd75c0bf8ea71b17511529e6aba7d764e5350d778121ab1755cdd60c4b19955e3695cb5555b9e1d4dac166a31f72331b64e82d31531da4cd241f58a1efc9b680516294ad681571e6cec1f85b38774cc4138fa1f17091350288cb1170bef91f9d81e91d60dd46040cc3547d031448e1fba4fe24814e628cb3f794f24631b47d172c1a54655370b6fcc88ed948f9a8a862c89b1294699d8c069becc81aa615c9c5b118c2caa24d699db3e7062f7ef378659118d672dae381cae168c0435e467c47559f24bd6e08c23557e8eb2e88af5c7a903adf3e39be0eaa143b7ca710b60a76b576d4380a884c10025c337e5154dd8a8276912c0b1372836702e39f64b0c9990f3a2af4cff3e4c1afba7a4d3ebedacf204a0a9d5c8a9ed27c95d3a10513af75608e583ee7394f1286cb9b6409c015dab19f88ac7643febffcf9c68cc8a7e098419e183509b897051c450c6678f3dbe750fbdf51c06790ab82420241c989ad30ffda0ec21883d2921140b72555df24c595ca64f71a5b767d76b6a6f85cef48fe1e5795f8d710a7f753c62028f1c6942dc9fcc84d765c53e0622a120ff41184fdbac4f8dd7542ddd66ef766ae68e2a5ba5f3ba5dc88401d802551f418dbde8e1ee895bb5a83673a3e6db2aa0bb720823f92875ba8c3f5beeef65aac706e8d87d08ec82b5442e1d8919c69770b7eafdc5a51be348122ecbf264fe488a638ecf3848bcdd1f3f882685b1e9223b95d109380c49b41706589f087d7fb240bb75ac47cea31901f504b1dce79423494f2cf755cb1e7647f30889373ea961ff2f5144d8f89d46bc20a29c65ba6ac30c1d725e9ae6091184ee22a217b329c61c7fe5138dd1367b77b252c5e2979ca0a67af8bdda2a1092cc30d11ba1de97c0260c565dadca03b4fe83e74fff3bbec882bf2316c7097126ae49064232b7c1d5ce7c238d49119f75cd821040f6e60e87dcab75a63cabb587a7bf1b483c767831144c3e931bd5da73736eeced398c4297b54e155147f7559984507ef8a480e5aaba29265a07f36a7f58db18bbf076fdf45a03a7d4469946d39c97e104ed348a2f22713067e061e3b79de5293e52181bd0a394b184c54afd99dbf93da0b1bac4700c09a4cf38c7c8398f0f203352954e77cda60b1cd3a2ddfe5f89b913e0a8297c669f88ff2e39214d0da20865ef64398c7efbeb5067475fc0741dffb98ff0607e8272b76c6516ff1cb98672c3299226365c936b7865aa68663bbe63bb70c9345f906684c20de1ec4de68b4d1559f13f9d657739b85002bd74453aae24a31d1c020bd1339f3e765e50b64c28fa6a8304d2dca4cc9060d1883030668c1bb4c1184ef629c96d1e7e3e14762ba1c4da57ad7c1dc9f3e04bdd58a2aa64f22f37ad2b561e9f86f1a2fad7bff617261902441725c530fabcecdee90b341bbe38c74002890f7b707c388f0de80fdfd48b25c7b6424bbe0ba72e8446b72aee27f0c0c7fe9499c9ad2d3e9c0f970e4c64dd0f6da9dc2c731165cfe610f9fb5e6b711ae7a3dcc64d8634f0e03bc09ae0ca3e0022e362fd933b00f357336aa1fbbd56558e75333d501454ec21281809bf42499176d43d50a7791c7fdd4f5ea5e01d8d272f84b31bb9cdc22cc338e4f5618733a9ad26a02dade30be9990d460730f3d6ac536c6bb788f99dfde351a9a52ba685f55f74161fecde810f5c913418b7e393e2f2fbef3b646c74c61faf659b4e450a6f6ed792edfa3dc2a1f9ace25af30bb60429fe85760eeedad403235f9d97f7fa49e4e07d589d06b85f6b99bcb7bbcbf383d1aef2a6d7919ad59e66e3ad43bffb9f6e8f977e4e7175aaf6e08b9ce719fe4c4e8297958cdb250f0324bbb105551ce1c0b92acb444dbef5d51a866442984a9aac5fe8a1dc470725f0d2c1c2832167857c6780cfab46954656cd2f4b77402e015806961098bfe05f87c0cc35e96609880047c89b20b200312e2e9499b5ec41adb469de827426e482bec873e9ffb3b18a6fd10a7a2e0132d3e79e4801186fd7863b101680f79baa951fbf82088e9cbde61b7c3f890afc468cb955bb6cf5bf648486d711b98d77147466c427f2546ac01e90fdf398c74e67d3c0c07338ca74b7cde4ab5e1aae2ed8443c7e43fdb102a2e2b26a2875440eb2f36a25367e6865864c2776aef6ed029e35fcdbb3317e1a94eba6ea4e8085f3e6b6c70c12ce002bad363a0afc50509dc7be2d3ce541146ada6a50e15e7cb6f6ef79806f95b62e48e9b43beaf405280e4cdd4606eaf0274881853213efdc33f1a62dc39a75638ea91de7a4d5d7b129b4a9088e70b30ad8f05f0c2be700897b8ba0bee0a77ac77de0d58f31f22082b648e1365a228278664cbc6b00d14d4decab888bdba3510d36a7687be6093f401390fbfa0372b1cffed912cb98c6d2bc18b92badbc313e00448ae079e52b44b46f7e7b9c58ae7ba4d39c58f40b53f53961f4e53ce9540db8430a2272a8316f4aee63aa89114a7c5633f1c3de53d91baa4808f3d87bc6d6fa33585b9bc152e16ff8a4e0092027cea7194ef7a78431d7b4922105ed05424509b640e81baedf77413c402cc2120f96174c6904a4a00c16852afe49e6e8e92f36e1743fdcc29809b2178a15e7dfc930ecb9fdfab5b27549295044b2b2df4e8e86a5a8f366418889d80e9046345714d2f9bc1454d735dacb1840fb05e860cf89b07afee7df92c272f425f9ce6624505c37a935c011ce4d1d4f5ff2c49e5d577295b4011ecb4a592bbc7f7654488ba507a2c3b1ee4fccb1635c6a53f2824407d117fb8538f7bf0e2aa832c6c759a24db43e6e4095446dd7f1a5fe4a62f77b7529fd9d3ce2ec522aeb11f32defa8994f71f07524fbb894484ed89a3b010f3703fedd5054824f0c85dfa8df0048091f32952f1f0c41159d529a9919208231c5d97978c193309cbe8ca529b974d6beb17ce4de8ba9ad3260c61bd902257a995435adaf518193ac01407057f9895339901a1d1f8a068d4e71f7fe77b2cc87f3f4e743e37090c4dc8d607014902fbf2ad8ff57c3582ae34cfd6cc7d2899413272913f908f6061709e24a030b94f8ae4b81e8ead96398b452dea76563e725e1f51ef831387ea3c80cbc67e9920b51877a96cd9eb6a15f289ec8d40cc2417f7030d455111c52271f9f31e388bc1182d4e312de76d0efaf9bd1467c1697baa41d462b57c553ef37c1ee99c903543f278b7958e1742f120212651057cde8738bff7f42401c1429c383dd5276fc9ab85fda473fb62aff7ce5948edc32d090e81e8a87b1ac1b735a014f5983b533e97d58814f12e1213659652993a8baf7c62b91dc6f6e685f29e178cfb070e192d4baf688e96376f4d0981d61e864fe19eefc8888f7c4c7f73b5144009a1bc66cc946b3997921f36ed183533179c507453d56d23d58b646ce298bd8a4690440a1b93fe784342414383f0a5f7a2885eeaa65ff9cc82d282a1c4ead58739ffced6c45793812f925268be744ee92dcbbc880927b05afa00963e5b19a0217a63fe65154294d744a76b26bc6d6a7da7226619b9fdb98ed9ef4e3b1813dd4736890376f1959fcf1971aa42d025995a318caedaa02595dfbb5f8c58eb886acf12e05db4ab67ff8d06c62a8ae5cb9e7f93d54b16718eaba6cc5bcd9cabd79c670bad32ab29ec2a85338a3f44a24e6ece3c086b8a6db099244d4b50a4b576a8923125a3ff0df47abba4d627f96157e91019daf771f23fe7d158813ce03d1c2e56c94ca6ac4b22cce27b0a2c80f58416d543d3ca6b0f7d998bb1f275345b34800cb9a8587dea369f56a0cee1c3d4d3b99539337f8c5abf04cf3ffd5a6775cfd99454fa3346558314c1907cea87cfaaf14e7dd81a4db1b1aac40700b54a758a2af7d9557947150d4da26d6f959e8df470a655cee0798da63004e627e99193ebcd7d816f6651e3d081d5a720b024d6108edfdd0442b5d0781057158b3024ea98b7087a7709fad950407bbc8beef9d888513f94f27bcfc4ff45e15de2b2a16e49888e6971f87b93a5c0c02725274c5f344b9e8c22842f05a432ee8a8c29adc597d1cead7309c6e5a52234b8dd6f173db6478ba8d6cd0ac4ddb2ddb5de8287a179527568802867a0a70ac3a315182e2f7d98c3ff060f263f5d5b26874e3267ed419e9a705f9c456a096a2f47281dd935c6d3b4326955ed9bfe6625028b291fc8c4bc46e1973d92044d17f81c188108fc6bbc262edbb9498c2536a234fe478d2233a3bac1aabcce69a93fafec0b261da5bc3284c810b32e629aaf7eeddca38d68706d8c4dac8c8146ccce023092a23fc0884a5b18971b0cc73357cd07b2f545ac9572b19af3fd7b5acf9970c2bfe0dfe17bf7f1e9517e194fba237887f2cfdc426d0a6c40045f8f7ed3237cfe96534ee7550a898ba267c479adcf48181c002239c48c2056b504c6ab402a19d4032b82573c64047db6536fa34531ae8b38831ad6107bac2568b7ebfc2f139cfec86f71c78c1a68e85bb83f6154ce8b39c0ba849983d51a4ee5fafa4163775218f224e2ef15e4b50220f3516b1d12ef98dd42c066f49a0eefff6271251cad9b7f70033b83fbf1a50ca944a5a6345049b88c61b5c99e89b7d7aeff772c0b5473e2cbcb04b3f4942e6e9305d8e7ec02fe8199411e54b2b82c9c7018456732c3330b30f552fe4a299c851df6a033f649bb119640a4c8c8a39e448e8f922b179b8831cde862e2118f84371078968348a291dd4fb16945a3532e92ae21d8e65f5da1703d70dfe09668e83fb739ae2859b951a6ca30138498a786a937b6f49d99ac4386363f97722afc05596708cb002c289d7ee410297161a4e151cfdfb9589cdb2444502a02a113a86ebf1c977ce6c55907bbb032d743dde8bde2d0de6b07711ca91967e24886d8b65f4fdda228fe275c3023752c036be4acda0b4f84317bbe30926facb6e077fa4c9170f1fa96cbaacaab1882d1aa38e0afdd3a8188dbab5005ef3cd4dd4885a6e6e8a80eedb3bb54dad8a141404e19c666f732ed8996d771ed99ec5d1ca934a65c6ffedd453a2fed6bca4371688fd23dfd76d5d57ba5d83cd7dcedec96024db9f65f390ee3a760b077c0da1211ab94fbe8df806918e1bfaa0cf9089c61630968e742cbb05499b2ae06696210cac090c2b4c08f1ec9efdc09a1748157225522e412ef1cccb11fca538f2a9e05bdafa566eeceee548c858a8499cafb6b05a680dabc9c06d124017a7b95d1cb82c2a0a1432d57d36607d7cc21492819e608a24a18e329d09feaae1641d739353f117896afcaa64241b536e088b026c8d3e9dbb85935064cb8fcc5d8da5f137515e01771de610b54aa5d3fdb6bab051d93f8885442ab2c52bbea1ae5d902ccd859198f179b9185a90bb547152eddfbd736027e149a357df5a05f29313672576bbae82be62071d07a048d66c9215379022b5f20bc50d61d25c2084195eef8b1d0f39eeed652b0eab5a8e67bc49f6ab8a7f20896130a6041a918645d0ca4ae15d43862ca2a278eef930895f9a06242239688eca109f1d578043fcca7a869e600807a2b6fa4cab345e8c08088d6df605668939286c453d95c7da959c8c6ada125d55a5e659c6573a98240b293c630161ce486a2fe29e7a86dcb92043e699ca293e7c15baf899560a400a7be8e76beecb3d1e71bbf5f54aad10c30faa212513b3c5d61bc6c265652852e2e5be79bdb8997d951fef782cbd32b3c79a1abfd572feddd4517e03b6fe9cd478fd544b6881c2a061f2e59c5e7d47ea8ef45fd45a7f2518d9516faa01996b96778b27866eb89484204cec4847e6be253a4d61c73e73111ed2d48ecc18a4182f40cc4db644de8743d92cafdcf028022b5ca19b14141b0ac52c46122d6b084246276bc285a236dd456ef7dd69260b9365c8c846190a53cce08f4e8c87847e9b9c5159d4816eb78689be553f0d38f504adb03caf300eaea121763b271b56044752898a6243818ae2b312cc818438fb512bd188a3d193ab3505dc1afb7a4abd1f474654e8cb84d0ed3f23fb26ba2da8d20211010d16dd5bbbe129fdae1afccd9ae6b1ebc73543560004a3fcafc0f4a0a9e1aac1a832219bb60f861b5d058964b42ea6799eac73e0fed6041c0ecea27dd611011de4a56a58f7b57a0adb9c07e30920207072deb71f7222e1a835888848148498379b8f688b5a1d79c2a1e12590cbea04edfd05e217ec97eea5e4b5cf90ed44740748281f2f9b920e41c8cc2ba11b2ef151f34f6e14a58c154657ad865ba4ff349f8d9e290d9a863e34332f21e7d7cb36182b7c6cc36fc2599f392bad70880ffd9493ac3c6df693601c1b4958677b42a07442315373023a3e7a6a880ae206faba78607a8265ff206caa296b788be1567dfc2c6a316344c2e6d63f6c3dbecb68b5d79c46b8cfc6c869b54ec89de63fdb91d45ac348883097d31ab26c663b68e2389df5292beae1d7e3cb0965c4812f9ba310dbeb092cdf6dc329321dcc5d32c3aaa13029bc0c4607b665247b4bf8af8afce55b47b13e0551320547e6984c47ef7c0c7730f060df58bb8332490878e39c12063531b7268e282e9127d7946988ae293bb3e97c125dc2132b6f436d3c68eddd7b4956d6c4ba1ddca88a6b95c7f0c075f8195623fcc056df2407136ce03bda9d8fc9562c11d6479a9dad8d280ee6d93667ecb124c81d079c286f303f0f4e959720f76b275f381f6bf5a348c46eb24e6f2626398ff38d8bc1259160519590a1c51ff292eb3e74590c335cd796f701fdf230b9e56fc3396141450054a48fb504cd5d3ccae580aeb4ef40e604034cfc49e78e17e5a973425e8456ac390527622ddb11115061492edb453e9fb8ccca68584a170dce4931ce5055abf2699acf5e433348318a75e15e838f41a2aa2ba0dd0774b05b5c0881d33cd1900c0c4b44599b582dd781acf412b3b797b6377053a48e22c1d1bcfa877068ec8df40578f332a43cf99d453b99e893dd3d01d6bebd2de477b33e09f89bd73d3f5167d85a29013ef4aa82a9173171f2495a502e07fce4191852163199d18d57bc2757417efce24fc485a3b39546beea8ca23b60c3fdfed212782325f3175b69b88a98e3482ab59f3e472e922ccbbf660822f6ed93b231959a4fcc8b374a3db14399b1202a1fa9317d48b9f3eb4f927a73a146fad8ae9b6c4623262d1ca739f885ded89ed8adb3098dff93240e4f12bd6601a328b1717ef5935154b21ba3d558b95a0800ebaa746beefe4ad60ea53eb0ea08baecba09a4a362f9b51f95596d8503f1fa94e78163fa751ec0c7db5c7c6de76d7f01440a8281befdc214db5492382e0c530455da01ad50f688255d55a89227f5a1b2ede17083f0e47d72a8e220a50d867d0dda59b574a5b6c92bf1693cb4156023784a1e3287f7c6399ea79d152d68af48f1ad1bffd2d8327f1d328075fe05d5203074aef357f62c13e1be9f5b561a6113010c275498a7e1eba0867e372425486a5bfd84119d259eeff6b7f4b90624ba8225019ce3d640b164aee556805c6e8c82f4b7cdeded29688fbd2c8d760dd725cfb4159b35e5576dd891f418c60845c0fc16403a31a0c7940adb7ad2d915a96d90598f608647a52257dbcc383f3710221c614fcaaef776e60eefae293c53c131e0db7aac9872429025ae3b50dcad54bde041f95d21277a3665c0b35f1d73a32e82ceb00f9bb3d36cb70f9ccb670ccb5b124c5c3f68df8052e798b87a5bcc025c149b014d0ab58982999a6aca9a2a3bf2e19647b72d06f254f2d2e8d530a83babf674c247dc21815718fe4b4f1eb09dcc3c9ab8c649bba9075c83732883df7ebd3f9ce888190715d46cf4e04ea9e24de7f5ac4e6d4878ae32b3c869116b03d53e62b1787b5af047a2cea65fc6e5a8d8d610bf8580b1a4639b442f11ee2f6cd7a2bf3e23549d9d2f77b5a52ed10867355906f840314b3151870162a5b3420eef93028ee24ce5a49da71341dbfceebcf7a46277581f874b193339807f315635af852d936d0591a612f6b9514297112ce7416b3a05b47abc8698eff021ad4506d8a0b21e0c4ce60204378ba4f53f894efb82efce1a466ee1b22b8e9e7b3615b1438153ffcb7e1a26baab9878bdcd850bf255f8bbdf5bbbe3176f194008633901e372ef653359f384eada886fc0cbbcf710ba9b8b1fcaefa3abe0ff6ac4050b85e61ed8a5f7b7e6824661d6c8145e9b3f261c3eeb9c6bb73490a2a7b6e32bffbd49b9308765baed96f6130002136ee0d8e44c98dfc8940f500b9c2e58aaad2aaf6916087a242d3305a9739ba7cd86b8674ce775e753256635f6b9cdde3430ec1bd4f3227083314e3e9e1a06ce0230faf7a90c9bfd5ef0cec861c85497db7cd3e5932f24102d49b8e78f56c3a805acccdbadc8a4067a4855707beb3d27b9389fe7f400bd8e71cc3387643bd3c7cf4b5e240a77b2a75dc8aac0a504d0e3015167ac1bf9a0216b81deefe5393fbac28d42ff43c719ad3e650552bd2781893fc18d20545b7797b34bbb74e34ddddf6863eb50e59a8c86e9a5aed49eff634aa93c2314ff8ffb06cfc323727d043b3647346378396ae9b2829ed708dff01116ec38c53157ba0c74129ade224a530b873bc7ef06bf4ba05ee67284597d47ad2e888c549d950196dd048e4c60817bd97bd84b8c5a596b33651b6fe39f93ba8e9d01d69214b43387e6c793d72c2846eca8fb3125714dfdd5edf5f4295d8fdc605dbe13713e8a72c7f2a0efdbad85a294e7e5763ebf8993d2a1a983b50a00058b73a885f037c4268384379a814f2da9ff6d55140fcfae28a91b94c963aa5ab6505d1a1e2209a59f535b89790cc98486175f2a69a9bda867105a2ee0ad906e5a28494e157bb65eda75dc48d3f6499accdd907843384b2942722c0d2b2518d86e95c9d9cf0b81aca9264b06eaf976d0d310c4c26e00046bc29e2d00f97bfc2cdb84141f3b83f2e0842e2c2a6710d9c34876e9aadc1556f9bfd58b5bbb41eb7a61d96567ad30d53c76b840814766ff970eb8b87bae9d455a17060ee6549c64215c9b25faba91d48cb0df8e96151d8d4b0f18306503f31faea85c55b5a9d49c8a9c26ed6a58c8d33aed709c68e7e937161d30d368c6215f09b0b9ced8bc9206d55684e88486192e3e37e0594cf26a4347c3e76939385c33cf53796c1fcdfd72e2dea83666771ce68e8b2c09e670321d07f349041b101d615a9d7d1166a9cf23826a3c16091e1c2c66b3ca50ec0ace41ed7162efb759d164c5da182adbb29a91c3194dc0d63d9bdf4cb90b6202c18b427e835c4cf62753254f7f6bdc40240201b3f0b5b977f1d5aac97b146f2b158fc265c3cc475b656dadfa754647b93d983e268b47d77d9edf3dc312ee500e1124e7f77e4700192a6e9d333b98cc4514d210d4d87ad63f4994617292486b38b6dbccf7f422d2463762c940ff32e452195907fc0b9d02458b80958f86e4b4e24f338589b9397c20f6b7b13465bf19afb927dbca7d76e350d96c6a33322a812dcb7c8f341b44a63d6a5e6eea9cd7507ffc0cb7559b340d9c77d2eadd93dd83b0975e095c5110cd8af29069c83766e7feb4aa558f095ff90a1728e135aac074e0d92e12ca4e2b817a2d30ad204b76ddc1a8d41e847ffee77f6b0c28fb65141a0bec5174bd16afb2e081a00317d568aab1cd10bcf8639ef28bc965c405693cd04ecfcd34704166a77dc42675164fd9c92bf5cbffdc14ce3086e7852fedecbcb5bdd8ef4caef5c70ffe4f098ba612162c51edb85712d72f18ab21264ec91db81825beafb70199582ace51dca81ad6f5b6f3601872843bf7462dd94908957bcc45721b0059507c1d741a36da48c0b050c589ef8e0fe04a4b3d1901624523cb13c7e998ecd22d2b46207bccb9a2b5bfa6ce2e523ebd2caaf3a2ad58188ef9ddb9874474aa27363c140aefa095045aade980ad41592a9f15014ce54c21242071e6cd4129b42180970d4dc19aa9d9a4e384bd29b4121b0f04f7e2b3d79749dab4b31df2f41f1030a15f3c1e0e98b4e79a064f2427e9624702155e5dc83a6d7d2b2265c2e7882bace9a5887a98d72d7120c897322eaf3f623ecf0cb8631dcef93604f9940a28897507d2575cf693076ee8db736e7c18397c7934bf70a896ecda68ca363d69320b967f1f8126486695e4a8f6fa6b945ce797f3576a7882bbee0fa8580ee72fbb537b77c7986cc1778450db85a8a81197bf34c9b06e4a01dccce56a0a968c2ce35feb14279ca8bf30edff2b2d055fe4c4d1e4e30b3ad93f60ecb5ffc2e892d75bc2365a4aff74078a2d05d05fb3901ff58abf68290c94940250f09fb782cc8d2fba6ae364f61292d9f911e0e5daf6fe45d0e9e98d895f641ef5b3f5bc2c1df95ddcfdaaeae8921b8111983bdc78611a8979e175444bcbe87980a0335d681d90d79ac0465772e99eea9263bd0bc87f138245867dbadc68502c029153e0f516a0f958bf1be8502fe5318907f873912aa4bc9fc4ee269b08c0b0d6da6c284c86992232d1aebf55ea2023c3332c20c42449be8d4f78860655f97a85e181b09e41f38f6beddce175be72eae7c4f127d3bdc7281ee280b3fbafd82a33e6ecec9e7162503409ad7bed229afde247d46cc9c4a548b8d971812d0d8e0a427240404424dba5da85c20fda43524466b1d4c87e051fa7ee529a1d2dcbb1a8726def4ab3f70f8c767faf2f8568ceacf86d4df579183be348eb1afc297e5a675ed119972cc6b5e9f79fba5027ffb240011439421ef1918a104d73ea78b033e0e4da0f316159a2ed45d7628dd78c31ec5498d8b1f59d6340069e225ca49442ae2ba3bf1e0ec039e05aa9aaf78dd5ec7a4d2d47dd0e7c04b61667e4f505547041665ad8ab98da2265c9cba507860e6701edd8afe6a38637fd8a8d0874aa64420dcdb34e21f807b8c0c9b23399aad82f4381214c2629b1b10f650472f105500b5c6c652469442cc742e72a3db7ae92049b68b117909e5dd628f9d736039988be0c4fc58f3ec6b08fbed27334f389d0bc3f5def0fd9655170e8d78a4584f8b9a730b25e533c4423346f4ef1dae318aeb17e497ac169123cf76a96ca83ffa122b0594c193a23a2275537da17cad199678a39251d81a9d97f3bbbd3d78bb1589b3f0dc7d1ab7a8d2cbe9808313769455710239c615f923f3ae1dc84ec0bf0dce3fe2d23202e72c81748825edb8c1a3212061e66d5ce4bbb7523c4a1e560732015cca22bcb73c594f089b1a876e5a43b7a1f584813c6036bed474b62eeb4277072238b9f034577ed922526ef7e5672000612dc12fc61524cc621f3b96035e414b91e865ef5e8d8061c373192fe4ab2a41caa098580a5240dcccbe94ee6d1eef73e8662baefdee4e288ebe08d1763fdc96384dd4e9165316fc65245edd096494acc69e61ffcd4c8f9194bf9e7772ac3b8d3dfcd45a2c57739ad46cb487ac3993365def1fb2828d059266da07c0b5e45b3bf15ea7986a4f8467b5377618dcb541115943b7b6d0bca8351eb058ed38a61da45bb9f6cca890f5c9370491bc39c1a0daa31c840011e5e90aa864e8b26f9efa60313c1de53b7e7cf824272e2ff6d7e9eabdc6a7c7e13740e423f6183dd73c17bdafaaae36c630e9033943c486b09eeaa3e381cfcae7c768940bbc77f98dba83b692c16f88f454da94102ed9e53929b7c137af764c764fc20a9e106456b443cbb696f00d49c3f84b618dd3af38e389d17a72478db1849620f20e741b412d5d003d84471c72779b3c69440c9d3377d24fbab3032d237347d0c3e60a5b34dfa300e167afa4ffedda3eaf9b2a6259336618cca5192d4899c5f8c0994d71b4caeba122093dea746ffc4ba0c621891ba23ece7afa59265b5e384ef122e1e23cffb9e93195d7d2f5d50c8cefe7dbd3a9963753a081768d394019c2b0a0473b4b61d34c351ff4e1ab73bed6104f6f7f4e260b912e68b319790de262e908573f81295252c6ccf3b748cf6ef27df6d9081bfcb01936f0c9f20604a6ac4583ad9d1f80033ee9a8e2e82f199a51d969638d49045a4c332bb24f2005e98d5696c34a5a9cff7b8f44c62c9d356420c142b07107c36dfaeb30d05e7acb6c19df37f10ebaa32cdd769b7cc5e87610b268acd118c0b93f8901a3a77117026fd9a01917d47676858b7f7cc43c2d0c248ffbee23f9e0dc5aad936e4cb97a6f3b96fcb77c10f06e8a78714b39d74a2e745b3199ffc8c7e7e05f45303a1a1c424a5db8cc7c7161ab619327f2fbc045b8643dc6d8312d58813d4422cbcad94775305c4be001a6c3bd26e48533778ccfcc476312e3482844144094647116193238850401a402fa7259ad8da4f71f8c7582125ad412e26e6db02fe0720dbe8ef9f38eabab9ca126e0922a1c7be9e8d8fbbacadf4f6c5926f59613e7fa3ce4c751f842d6fa3e1166e1cda925c4aba397970a4dd860bd1c253968b9bee7670580e7d2557df8af85bde5f5a44a069a545f061610915a695ab9de9ae6f81dd657533b7f60c28886161c36877693f2c846e53aec8114e87d26962b278a2122e8e3f1c744c649f3ad99d9234f2bd55bb608927063bf28d1ceaa4a225d2371466b783a1bcb44c83b8196953c9de6f1f4ad933e36f4cab90ecbf456f88b3577c7ade7363f49acdfdf4f1660e0eef959b3da50fd8b94e75f0f80d1771100df816bb6414939e637f6d6d2f5ad7533f5975d0d844ec108db27217b33d5748c7b0178c1a9d408f1d49c773b41767ffafb05cc1f8747a5374b64c3ca78d82c69eac3e40b971947bc975f1c5869e42087434037c5b214f5ae7af0bb18ee08dfab20084a4b50b9a65e4dbe3a3a10e98bac2844a37b077a9c12feee6aa33c2bd449e011314f6a9276b8eebf07a3ba27515f86a2a4b379e4381cd82dee6a5882b7d05684c29b264d868a9f111f69081f4e5900a17b2b15e0d2f222d75cbf668e3e68d70909f97f4a53ababaf7d0dd6549ca29d33a64137915e7bd74447bfc9a44603d72cc7032d3bef253230a5aa7b7edaa30a9fb749cfd9f5611fd5b59c9004da2fa9c2eb0a0648a3dfb8a1071d6197c5befc61a00f5263f70cae8d28b4365f909ef135bfc0110a5cb47fba1f4967d5c4e797fe159000f8937e2cb41a37fc12e256ca81da8b49c76273b69ee2ae060752717e220aa70a38d973d0760fabdf206bf3398186374a4a5be8683b1419729048e8a408edb87aa7ffd4c4de98addc19d086216644b9e73bab12315effd00bd4aa68425ccb9baeb709bfd5e43c3141057e81abb2758cebf0fb6bee6ea228cdb51e170de698b8b46643b6f08d5e006077d7d4b8ae50fc0898203d437b56759cb28a770e01b611dfce390105ba905677e5635ee9752357df5311b49745f33ea4cab4756897c6085a188d9bae74909d5a4a6e442164e779f37ce5cfc8666bed8ef816965720f94a3f2aab838cb9090f6934da2a6d71fbe3205f1c61ad94b11bb62a5aacc44221fa314647ffae3792d9849b62aa3801200aadab3082447c088d607169b3417bf316518087da91a1ed32d4ac870bf13dbbc6cb32d21bdb80fb79f06831b7f78786050e655fd4f3d9c867c6cc91e4a38bf19af18fab3d2e2cfa8489ff88ab1dacb2f817ff013983e9a4b6a71cfb627455bef0d4abb0218545dc140bdd201b04cb3ec7e55b528df03f81ce3c980a9170ae34974a3cbe569c39998dd1b3204d7424dd97331aa69a33ecaf8a5e038fac502b2bd7b35e6bd9d8f100b33bcd9960a5b63c935e287065482ca1eddd64aada1a775610847a7b1add0eb35130ff5c8c93d4fe128656ded248b4fe441e4882398250002b44d9697cd6c36ebc2cffdfd6a56ef1ce51a26bed5f0dd1df3800d97760283b8c8a748d1cc81816bef2386ddd9f1f6adfd4f61156e53e033ba2ba121bd72e198655cdebc78efa78b707e031d400f4818f28dd44a8a5c3f12c8f1eab01dc6174a120e77fecd9e76881ca14c6e8e6bb6265ca882fe2525271bc7906488f12dafe37eb8e0f9ada3b490dd3c17351fddcfa1d11774f7b99c0c48eae6d85f2cfa79056d6fdf5dffb59e02c9af5b9193c2bb8113c5290a82eb7107dbfab1ff54b19ae49482c3e126e06002e1ad65d1a2f360720ba6092717c588a674e3c1b6273b7ac5e32640b905a6415bd0699946746ba02b803966c5f273d80b1f6bb4ec7c06acf902e9294922db112e69fa458e30154f1f1285c85e7ae0768fb0f5a9a16fe4a34a2eefdfe1f2e251bd208cd64068530c2ea023e1bf2a5f69f7fca461a2390f635e092015f23bdf3c473c2550f49f42399c1b96ad6d52c15e0c8592d22aca00230be43e2a59b07601b640b534b72cb8ec2e60000503c391e5f7a7c945c889a3e0483a6ac352980ab6a5bbe9c2557cbce11ead8988a814c2e420aacc83f96a68178099d8154dc8840e83f283bb8e8b83852f9e791342491e4787bf3579af810be91afb6b076613d978c936b7418ac37fe969f2acbf3ef04bbc2bf58df54ab15754fa00f018e380b7fddd09fb28950e154100b542e549b075923b314f34a16088ef4dd5d1cdb5d3a9980612558ee8dad1b3ed5f0dcdaf798bcff04e5e6c79f7acf7092cb012755ddcd2e4a51b211addac73e46cfc236bf5fd75727be816bc639e6bfd5c1469c9a76d741284ca53a5fb27211eca2a6c85469102960b8602d6908dd14736650ccdd2e5e479dfe8d25eed8179d76b498ad6bb8f625765bff8cba1a2b2994ee32b543f6669a6dcec3cb9bfb20c1da5afa14682e8e1bfdd0570ce0bb1426ead2a7b84af5c8f3b1bedb327067962e746efc6f3ff44d5d0287d76d4dff522757b473c26feed257b9f43f143c1ca7ae1285ae7abc4df4a173fbb0a9ecae06efe14e40f55b4245071dd621aed5fad3cdd3ddabcad84a8bba85c54ec7c9faa0b8f3b47d88ca3a65ebd7d5ceef11b493ccdc8f048ec9613bdedc9281e62f9984bea41f1a8fc6ccbbb7ae3722b28b543a6fedf35aa50988d442783694126c8897864e29890e121ae4359a5b5204cb431409d53edd1f62f0763f2db0dfa9828ce337a7309df5096f2a96171cdc1d029a2b6c0acac89adb729d3bbb6140f053431e1f7d860623c86dcdfcfd2a9e4818596a23f079d8a2c07a854dcd20bacf4a0a030518f184a35566f013e524610074ebe36e9891cb940aa3d0d72f3bf1f393a2bf469b370175ebbb2aabea79712ead38f49aff7ae7c82a4d93f3f8fe660affeba3465aff49689a2a5f58dbe0e9863c922cbf401826c644445f738b590e6bcbdadbadf35f18b800533a50a6ca1b2ac608d4489be81f6800d3b3c18de2240efd6cf83080805aa138bd110570fc7c01ba6a5ad7b36bb37e4b879964c0598c44a4eae4e1ffe8163b2f20df712f117bfca13a99789fae3d4d34c5450c4b3fba8d0ef34aec686179c3d7e9780d9cfae8c4ab42ce51eac7f334501cf5f721fd8d127ae66a04ecc6702719dbf89f1a0b20549e263d3ffb109e3b28bb54929edba2e894948a939c1a533cdb086af55d438085c49cdf74b591820a75d67c99dd28ce47902f3f80e90d725efdd1f4bd0e21aea03a2e64</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-xray">
+      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span>
+      </label>
+      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">IcKylin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/10/09/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/">http://example.com/2024/10/09/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">IcKylinのBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93/">达梦数据库</a></div><div class="post_share"><div class="social-share" data-image="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%A7%86%E5%9B%BE%E7%AE%A1%E7%90%86/" title="达梦数据库-视图管理"><img class="cover" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">达梦数据库-视图管理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/09/25/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%89%E8%A3%85/" title="达梦数据库-安装"><img class="cover" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-25</div><div class="title">达梦数据库-安装</div></div></a></div><div><a href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/" title="达梦数据库-数据查询"><img class="cover" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-08</div><div class="title">达梦数据库-数据查询</div></div></a></div><div><a href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%94%A8%E6%88%B7%E5%92%8C%E8%A1%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86/" title="达梦数据库-用户和表空间管理"><img class="cover" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-08</div><div class="title">达梦数据库-用户和表空间管理</div></div></a></div><div><a href="/2024/09/30/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%88%9B%E5%BB%BA&%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93/" title="达梦数据库-创建&amp;配置数据库"><img class="cover" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-30</div><div class="title">达梦数据库-创建&amp;配置数据库</div></div></a></div><div><a href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%A8%A1%E5%BC%8F%E5%92%8C%E8%A1%A8%E7%AE%A1%E7%90%86/" title="达梦数据库-模式和表管理"><img class="cover" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-08</div><div class="title">达梦数据库-模式和表管理</div></div></a></div><div><a href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%A7%86%E5%9B%BE%E7%AE%A1%E7%90%86/" title="达梦数据库-视图管理"><img class="cover" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-08</div><div class="title">达梦数据库-视图管理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/profile.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">IcKylin</div><div class="author-info__description">选择有时候比努力更重要</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Zogur" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class" style="display:none"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD"><span class="toc-number">1.</span> <span class="toc-text">物理备份</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%B1%E6%9C%BA%E5%A4%87%E4%BB%BD"><span class="toc-number">1.1.</span> <span class="toc-text">脱机备份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%94%E6%9C%BA%E5%A4%87%E4%BB%BD"><span class="toc-number">1.2.</span> <span class="toc-text">联机备份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%98%E5%8E%9F"><span class="toc-number">1.3.</span> <span class="toc-text">数据库还原</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%A4%87%E4%BB%BD"><span class="toc-number">2.</span> <span class="toc-text">逻辑备份</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8DM%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E5%AF%BC%E5%87%BA"><span class="toc-number">2.1.</span> <span class="toc-text">使用DM管理工具导出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E5%AF%BC%E5%87%BA"><span class="toc-number">2.2.</span> <span class="toc-text">使用命令行工具导出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%98%E5%8E%9F"><span class="toc-number">3.</span> <span class="toc-text">逻辑还原</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8DM%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E5%AF%BC%E5%85%A5"><span class="toc-number">3.1.</span> <span class="toc-text">使用DM管理工具导入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E5%AF%BC%E5%85%A5"><span class="toc-number">3.2.</span> <span class="toc-text">使用命令行工具导入</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/10/09/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/" title="达梦数据库-备份与恢复"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="达梦数据库-备份与恢复"/></a><div class="content"><a class="title" href="/2024/10/09/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/" title="达梦数据库-备份与恢复">达梦数据库-备份与恢复</a><time datetime="2024-10-09T08:47:17.000Z" title="发表于 2024-10-09 16:47:17">2024-10-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%A7%86%E5%9B%BE%E7%AE%A1%E7%90%86/" title="达梦数据库-视图管理"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="达梦数据库-视图管理"/></a><div class="content"><a class="title" href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%A7%86%E5%9B%BE%E7%AE%A1%E7%90%86/" title="达梦数据库-视图管理">达梦数据库-视图管理</a><time datetime="2024-10-08T06:09:04.000Z" title="发表于 2024-10-08 14:09:04">2024-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/" title="达梦数据库-数据查询"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="达梦数据库-数据查询"/></a><div class="content"><a class="title" href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/" title="达梦数据库-数据查询">达梦数据库-数据查询</a><time datetime="2024-10-08T05:53:53.000Z" title="发表于 2024-10-08 13:53:53">2024-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/" title="达梦数据库-表数据操作"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="达梦数据库-表数据操作"/></a><div class="content"><a class="title" href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/" title="达梦数据库-表数据操作">达梦数据库-表数据操作</a><time datetime="2024-10-08T03:21:49.000Z" title="发表于 2024-10-08 11:21:49">2024-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%94%A8%E6%88%B7%E5%92%8C%E8%A1%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86/" title="达梦数据库-用户和表空间管理"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.sGZCPyXc-j_PyClHmFoXZQHaEO?w=269&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="达梦数据库-用户和表空间管理"/></a><div class="content"><a class="title" href="/2024/10/08/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%94%A8%E6%88%B7%E5%92%8C%E8%A1%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86/" title="达梦数据库-用户和表空间管理">达梦数据库-用户和表空间管理</a><time datetime="2024-10-08T01:42:24.000Z" title="发表于 2024-10-08 09:42:24">2024-10-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By IcKylin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">珍惜当下，热爱生活</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
